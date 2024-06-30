@@ -1,4 +1,133 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
+    text-decoration: none;
+    font-family: "Montserrat";
+    color: white;
+}
+
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    background: radial-gradient(at top left, rgb(216, 13, 13) 0%, rgb(18, 8, 37) 100%);
+    background-repeat: no-repeat;
+}
+
+p {
+    margin: 16px auto;
+    line-height: 1.5em;
+}
+
+.layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+}
+
+nav {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin: 40px auto;
+    width: 100%; 
+    max-width: 1200px;
+}
+
+
+nav .navigation-box {
+    display: flex;
+    align-items: center;
+}
+
+nav .navigation {
+    justify-self: end; /* Alinea .navigation al final (derecha) de su celda de grid */
+    text-align: right; /* Alinea el texto de los enlaces a la derecha */
+}
+
+nav a {
+    display: inline-block;
+    margin-left: 20px;
+    font-weight: 400;
+    padding-bottom: 8px;
+    border-bottom: 3px solid transparent;
+}
+
+nav a:hover {
+    border-color: white;
+}
+
+footer p {
+    text-align: center;
+    color: #bbb;
+    margin: 40px auto;
+}
+
+.layout-a {
+    display: flex;
+    min-width: 0px;
+    align-items: center;
+    text-decoration: none;
+}
+
+.layout-logo {
+    width: 60px;
+    height: auto;
+    margin-right: 10px; 
+    border-radius: 50%;
+}
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+.container-content {
+    background-color: rgba(255, 255, 255, 0.25); 
+    border-radius: 10px;
+}
+
+.car-container {
+    background-color: rgba(255, 255, 255, 0.25); 
+    border-radius: 10px;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.car-card {
+    background: radial-gradient(at top left, rgb(216, 13, 13) 0%, rgb(18, 8, 37) 100%);
+    background-color: rgba(255, 255, 255, 0.25); 
+    flex: 0 1 calc(33.333% - 20px);
+    box-sizing: border-box;
+    margin-bottom: 20px;
+    margin-right: 20px;
+    border-radius: 10px;
+    padding: 15px;
+}
+
+.car-card:nth-child(3n) {
+    margin-right: 0; 
+}
+
+.car-card:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.car-detail {
+    margin-bottom: 150px;
 }
