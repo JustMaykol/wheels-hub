@@ -1,21 +1,19 @@
 import React from 'react';
 
 const Footer = () => {
+    const data = JSON.parse(localStorage.getItem("data"));
+
     return (
-        <footer style={{
-            background: "rgba(0, 0, 0, 0.25)",
-            textAlign: 'center',
-            padding: '20px',
-            position: 'fixed',
-            left: 0,
-            bottom: 0,
-            width: '100%'
-        }}>
+        <footer>
             <div>
-                <a href="/about">AboutUs</a> | <a href="/contact">Contact</a>
+                <a href="/about">About</a> | <a href="/contact">Contact</a>
             </div>
             <div>
-                © {new Date().getFullYear()} WheelsHub Honda. All rights reserved.
+                { }
+
+                { undefined && `© 2024 ${ data.name } WheelsHub.` }
+
+                © 2024 { data.name } WheelsHub.
             </div>
         </footer>
     );
