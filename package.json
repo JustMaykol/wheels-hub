@@ -13,9 +13,17 @@
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
   "dependencies": {
+    "@iconify-icons/bx": "^1.2.6",
+    "flowbite": "^2.4.1",
+    "flowbite-react": "^0.10.1",
     "gatsby": "^5.13.5",
+    "gatsby-image": "^3.11.0",
+    "gatsby-plugin-google-fonts": "^1.0.1",
+    "gatsby-plugin-image": "^3.13.1",
+    "gatsby-plugin-sharp": "^5.13.1",
     "gatsby-source-filesystem": "^5.13.1",
     "gatsby-transformer-json": "^5.13.1",
+    "gatsby-transformer-sharp": "^5.13.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-slick": "^0.30.2",
@@ -28,5 +36,12 @@
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
+  },
+  "devDependencies": {
+    "@iconify/react": "^5.0.1",
+    "autoprefixer": "^10.4.19",
+    "gatsby-plugin-postcss": "^6.13.1",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.4"
   }
 }

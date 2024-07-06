@@ -1,7 +1,6 @@
 {
+  "tag": "ford",
   "name": "Ford",
-  "colors": {
-    "primary": "black",
-    "secondary": "white"
-  }
+  "icon": "simple-icons:ford",
+  "colors": "#1C396D"
 }

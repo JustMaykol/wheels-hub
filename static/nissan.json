@@ -1,7 +1,6 @@
 {
+  "tag": "nissan",
   "name": "Nissan",
-  "colors": {
-    "primary": "black",
-    "secondary": "white"
-  }
+  "icon": "simple-icons:nissan",
+  "color": "#C3002F"
 }

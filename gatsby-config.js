@@ -1,10 +1,15 @@
 module.exports = {
     plugins: [
+        `gatsby-plugin-image`,
+        `gatsby-plugin-sharp`,
+        `gatsby-transformer-sharp`,
         {
-            resolve: `gatsby-source-filesystem`,
+            resolve: `gatsby-plugin-google-fonts`,
             options: {
-                name: `data`,
-                path: `${ __dirname }/data`,
+                fonts: [
+                    `montserrat\:400,700`,
+                ],
+                display: 'swap'
             },
         },
         `gatsby-transformer-json`,

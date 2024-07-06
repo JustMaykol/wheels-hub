@@ -1,9 +1,6 @@
 {
+  "tag": "honda",
   "name": "Honda",
-  "logo": "https://www.honda.com/content/dam/ww1/honda_com/brand/logo/honda-logo-black.png",
-  "description": "Honda Motor Co., Ltd. is a Japanese public multinational conglomerate corporation primarily known as a manufacturer of automobiles, motorcycles, and power equipment.",
-  "colors": {
-    "primary": "123",
-    "secondary": "123"
-  }
+  "icon": "simple-icons:honda",
+  "color": "#DA251D"
 }
