@@ -2,5 +2,9 @@
   "tag": "ford",
   "name": "Ford",
   "icon": "simple-icons:ford",
-  "colors": "#1C396D"
+  "colors": {
+    "primary": "#00274D",
+    "secondary": "#FFFFFF",
+    "accent": "#C4CED4"
+  }
 }

@@ -6,7 +6,7 @@ const useTenantData = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const subdomain = "honda";
+            const subdomain = "nissan";
             const cachedData = localStorage.getItem(subdomain);
 
             if (cachedData) {
@@ -27,7 +27,7 @@ const useTenantData = () => {
             }
         };
 
-        fetchData();
+        fetchData().then();
     }, []);
 
     return { data, loading };

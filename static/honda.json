@@ -2,5 +2,9 @@
   "tag": "honda",
   "name": "Honda",
   "icon": "simple-icons:honda",
-  "color": "#DA251D"
+  "colors": {
+    "primary": "#DA251D",
+    "secondary": "#FFFFFF",
+    "accent": "#000000"
+  }
 }

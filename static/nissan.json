@@ -2,5 +2,9 @@
   "tag": "nissan",
   "name": "Nissan",
   "icon": "simple-icons:nissan",
-  "color": "#C3002F"
+  "colors": {
+    "primary": "#C3002F",
+    "secondary": "#000000",
+    "accent": "#C0C0C0"
+  }
 }
