@@ -9,7 +9,7 @@ import Featured from "../components/Featured";
 
 import useTenantData from "../hooks/useData";
 
-const featuredImages = [
+export const featuredImages = [
     {
         src: 'https://via.placeholder.com/800x400',
         alt: 'Imagen destacada 1',
