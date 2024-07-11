@@ -2,70 +2,75 @@ import React from 'react';
 
 import { Carousel } from 'flowbite-react';
 
+import Map from '../components/Map';
 import Layout from "../components/Layout";
+import Loading from '../components/Loading';
+import Featured from "../components/Featured";
 
+import useTenantData from "../hooks/useData";
 
 const featuredImages = [
     {
         src: 'https://via.placeholder.com/800x400',
         alt: 'Imagen destacada 1',
         title: 'Featured 1',
+        price: '$100',
     },
     {
         src: 'https://via.placeholder.com/800x400',
         alt: 'Imagen destacada 2',
         title: 'Featured 2',
+        price: '$200',
     },
     {
         src: 'https://via.placeholder.com/800x400',
         alt: 'Imagen destacada 3',
         title: 'Featured 3',
+        price: '$300',
     },
 ];
 
 const Index = () => {
+    const { data, loading } = useTenantData();
+
+    if (loading) {
+        return <Loading/>;
+    }
+
+    const parts = [
+        {
+            title: 'Featured Images',
+            action: <Featured images={ featuredImages } color={ data.colors.primary }/>
+        },
+        {
+            title: 'Our Location',
+            action: <Map/>
+        }
+    ]
+
     return (
-        <Layout>
+        <Layout data={ data }>
             <div className="container mx-auto px-4 py-8">
-                <h1 className="text-4xl font-bold text-center">Welcome to Our Website</h1>
+                <h1 className="text-4xl font-bold text-center mb-8">Welcome to Our Website</h1>
 
-                <div className="mb-8">
-                    <Carousel slideInterval={ 3000 }>
-                        { featuredImages.map((image, index) => (
-                            <div key={ index }>
-                                <img src={ image.src } alt={ image.alt } className="block w-full h-auto"/>
-                                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gray-800 bg-opacity-75 text-white">
-                                    <p className="text-center">{ image.title }</p>
+                <div className="mb-16 flex justify-center">
+                    <div className="w-full sm:w-3/4 md:w-3/4 lg:w-1/2">
+                        <Carousel>
+                            { featuredImages.map((image) => (
+                                <div className="relative">
+                                    <img src={ image.src } alt={ image.alt } className="block w-full h-auto"/>
                                 </div>
-                            </div>
-                        )) }
-                    </Carousel>
-                </div>
-
-                <div className="mb-8">
-                    <h2 className="text-3xl font-bold text-center mb-4">Featured Images</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        { featuredImages.map((image, index) => (
-                            <div key={ index } className="flex flex-col items-center">
-                                <img src={ image.src } alt={ image.alt } className="mb-2"/>
-                                <p className="text-lg font-semibold">{ image.title }</p>
-                            </div>
-                        )) }
+                            )) }
+                        </Carousel>
                     </div>
                 </div>
 
-                <div className="mb-8">
-                    <h2 className="text-3xl font-bold text-center mb-4">Customer Testimonials</h2>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                        { testimonials.map((testimonial, index) => (
-                            <div key={ index } className="flex flex-col items-center p-4 border rounded-lg shadow-md">
-                                <img src={ testimonial.image } alt={ testimonial.name } className="w-24 h-24 rounded-full mb-4"/>
-                                <p className="text-lg font-semibold mb-2">{ testimonial.name }</p>
-                                <p className="text-center">{ testimonial.comment }</p>
-                            </div>
-                        )) }
+                { parts.map((part) => (
+                    <div className="mb-16">
+                        <h2 className="text-3xl font-bold text-center mb-6">{ part.title }</h2>
+                        { part.action }
                     </div>
-                </div>
+                )) }
             </div>
         </Layout>
     );
