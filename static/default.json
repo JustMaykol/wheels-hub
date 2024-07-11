@@ -1,6 +1,10 @@
 {
   "tag": "default",
-  "name": "Wheels Hub",
+  "name": "WheelsHub",
   "icon": "mdi:car",
-  "color": "#8D60BE"
+  "colors": {
+    "primary": "#AE8507",
+    "secondary": "#FFFFFF",
+    "accent": "#C4CED4"
+  }
 }

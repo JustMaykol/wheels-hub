@@ -33,32 +33,36 @@ const Layout = ({ children }) => {
         );
     }
 
-    console.log(data);
+    const primary = data.colors.primary;
+    const secondary = data.colors.secondary;
+    const accent = data.colors.accent;
+
+    console.log(primary, secondary, accent);
 
     return (
         <div className='min-h-screen flex flex-col'>
             <header>
-                <Navbar fluid={ true } rounded={ false } className={ `bg-[${ data.colors.secondary }] dark:bg-gray-800` }>
+                <Navbar fluid={ true } rounded={ false } className='bg-gray-400 dark:bg-gray-600'>
                     <NavbarBrand className='items-center' href='/'>
-                        <Icon icon={ data.icon } className='text-3xl mr-2' style={ { color: data.colors.primary } }/>
-                        <div className='self-center whitespace-nowrap text-xl font-semibold' style={ { color: data.colors.primary } }>
+                        <Icon icon={ data.icon } className='text-3xl mr-2' style={ { color: primary } }/>
+                        <div className='self-center whitespace-nowrap text-xl font-semibold' style={ { color: primary } }>
                             { data.name }
                         </div>
                     </NavbarBrand>
 
                     <div className='flex items-center md:order-2 space-x-4'>
                         <a href='/login'>
-                            <Icon icon='fa-solid:user' className='text-3xl' style={ { color: data.colors.accent } }/>
+                            <Icon icon='fa-solid:user' className='text-3xl' style={ { color: primary } }/>
                         </a>
 
                         <DarkThemeToggle/>
-                        <NavbarToggle style={ { color: data.colors.primary } }/>
+                        <NavbarToggle style={ { color: primary } }/>
                     </div>
 
                     <NavbarCollapse>
                         { pages.map(({ path, title }) => {
                             return (
-                                <NavbarLink className='text-gray-800 dark:text-gray-200' href={ path }>
+                                <NavbarLink className='text-black dark:text-white font-semibold' href={ path }>
                                     { title }
                                 </NavbarLink>
                             );
@@ -71,7 +75,7 @@ const Layout = ({ children }) => {
                 { children }
             </main>
 
-            <footer className={ `bg-[${ data.colors.accent }] text-white text-center py-3` }>
+            <footer className='text-black dark:text-white bg-gray-400 dark:bg-gray-600 font-semibold text-center py-3'>
                 <p>© { data.name }. All rights reserved.</p>
             </footer>
         </div>
