@@ -1,10 +1,11 @@
 const path = require('path');
 
-exports.onCreatePage = ({ page, actions }) => {
+exports.createPages = async ({ actions }) => {
     const { createPage } = actions;
 
-    if (page.path.match(/^\/vehicles\//)) {
-        page.matchPath = "/vehicles/*";
-        createPage(page);
-    }
+    createPage({
+        path: `/vehicles/__model__`,
+        matchPath: `/vehicles/*`,
+        component: path.resolve(`./src/templates/vehicles-template.js`),
+    });
 };

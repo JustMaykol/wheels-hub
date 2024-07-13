@@ -1,10 +1,20 @@
 {
-  "tag": "ford",
+  "id": "FORD",
   "name": "Ford",
   "icon": "simple-icons:ford",
-  "colors": {
-    "primary": "#00274D",
-    "secondary": "#FFFFFF",
-    "accent": "#C4CED4"
-  }
+  "color": "#081534",
+  "carousel": [
+    {
+      "alt": "Mustang",
+      "url": "https://images.unsplash.com/photo-1603553329474-99f95f35394f?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "alt": "Ranger",
+      "url": "https://images.unsplash.com/photo-1617132217587-19a419c6a985?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "alt": "F-150",
+      "url": "https://images.unsplash.com/photo-1551830820-330a71b99659?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  ]
 }

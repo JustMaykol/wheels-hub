@@ -1,10 +1,20 @@
 {
-  "tag": "default",
+  "id": "NONE",
   "name": "WheelsHub",
   "icon": "mdi:car",
-  "colors": {
-    "primary": "#AE8507",
-    "secondary": "#FFFFFF",
-    "accent": "#C4CED4"
-  }
+  "color": "#AE8507",
+  "carousel": [
+    {
+      "alt": "Image 1",
+      "url": "https://via.placeholder.com/800x400"
+    },
+    {
+      "alt": "Image 2",
+      "url": "https://via.placeholder.com/800x400"
+    },
+    {
+      "alt": "Image 3",
+      "url": "https://via.placeholder.com/800x400"
+    }
+  ]
 }

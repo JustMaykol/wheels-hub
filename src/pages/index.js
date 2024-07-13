@@ -2,51 +2,22 @@ import React from 'react';
 
 import { Carousel } from 'flowbite-react';
 
-import Map from '../components/Map';
 import Layout from "../components/Layout";
 import Loading from '../components/Loading';
-import Featured from "../components/Featured";
 
-import useTenantData from "../hooks/useData";
-
-export const featuredImages = [
-    {
-        src: 'https://via.placeholder.com/800x400',
-        alt: 'Imagen destacada 1',
-        title: 'Featured 1',
-        price: '$100',
-    },
-    {
-        src: 'https://via.placeholder.com/800x400',
-        alt: 'Imagen destacada 2',
-        title: 'Featured 2',
-        price: '$200',
-    },
-    {
-        src: 'https://via.placeholder.com/800x400',
-        alt: 'Imagen destacada 3',
-        title: 'Featured 3',
-        price: '$300',
-    },
-];
+import useData from "../hooks/useData";
+import useVehicles from "../hooks/useVehicles";
+import { Link } from "gatsby";
 
 const Index = () => {
-    const { data, loading } = useTenantData();
+    const { data } = useData();
+    const { vehicles } = useVehicles(data?.id);
 
-    if (loading) {
+    if (!data || !vehicles) {
         return <Loading/>;
     }
 
-    const parts = [
-        {
-            title: 'Featured Images',
-            action: <Featured images={ featuredImages } color={ data.colors.primary }/>
-        },
-        {
-            title: 'Our Location',
-            action: <Map/>
-        }
-    ]
+    const featured = vehicles.slice(2, 5);
 
     return (
         <Layout data={ data }>
@@ -56,21 +27,40 @@ const Index = () => {
                 <div className="mb-16 flex justify-center">
                     <div className="w-full sm:w-3/4 md:w-3/4 lg:w-1/2">
                         <Carousel>
-                            { featuredImages.map((image) => (
+                            { data.carousel.map((image) => (
                                 <div className="relative">
-                                    <img src={ image.src } alt={ image.alt } className="block w-full h-auto"/>
+                                    <img src={ image.url } alt={ image.alt } className="block w-full h-auto"/>
                                 </div>
                             )) }
                         </Carousel>
                     </div>
                 </div>
 
-                { parts.map((part) => (
-                    <div className="mb-16">
-                        <h2 className="text-3xl font-bold text-center mb-6">{ part.title }</h2>
-                        { part.action }
+                <div className="mb-16">
+                    <h2 className="text-3xl font-bold text-center mb-6">Featured Images</h2>
+
+                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                        { featured.map(car => (
+                            <Link to={ `/vehicles/${ car.model }` } className="flex flex-col items-center rounded-lg p-3 hover:shadow-lg transition-shadow duration-300">
+                                <div className="w-full h-40 overflow-hidden flex items-center justify-center mb-3">
+                                    <img src={ car.image_url } alt={ car.model } className="object-contain w-full h-full rounded"/>
+                                </div>
+                                <p className="text-md font-semibold">{ car.model }</p>
+                                <p className="text-md font-semibold mt-1 text-yellow-300">${ car.price }</p>
+                            </Link>
+                        )) }
                     </div>
-                )) }
+                </div>
+
+                <div className="mb-16">
+                    <h2 className="text-3xl font-bold text-center mb-6">Our Location</h2>
+
+                    <div className="flex justify-center">
+                        <div className="w-full h-64 md:h-96 lg:w-3/4 lg:h-72 mx-auto rounded-lg overflow-hidden shadow-lg">
+                            <iframe title="Google Maps" width="100%" height="100%" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15605.095819436677!2d-77.0505357191229!3d-12.046374871580071!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c88ee27c9921%3A0x4a52b9a6e8f2e5a1!2sLima%2C%20Peru!5e0!3m2!1sen!2sus!4v1623859823420!5m2!1sen!2sus" allowFullScreen></iframe>
+                        </div>
+                    </div>
+                </div>
             </div>
         </Layout>
     );

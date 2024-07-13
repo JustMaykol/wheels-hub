@@ -1,36 +1,29 @@
 import { useEffect, useState } from 'react';
 
-const useTenantData = () => {
+import { navigate } from "gatsby";
+
+const useData = () => {
     const [data, setData] = useState(null);
-    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         const fetchData = async () => {
-            const subdomain = "nissan";
-            const cachedData = localStorage.getItem(subdomain);
+            const domain = "ford";
 
-            if (cachedData) {
-                setData(JSON.parse(cachedData));
-                setLoading(false);
-            } else {
-                try {
-                    const response = await fetch(`/${ subdomain }.json`);
-                    const data = await response.json();
+            try {
+                const response = await fetch(`/${ domain }.json`);
+                const data = await response.json();
 
-                    localStorage.setItem(subdomain, JSON.stringify(data));
-                    setData(data);
-                    setLoading(false);
-                } catch (error) {
-                    console.error("Failed to fetch tenant data:", error);
-                    setLoading(false);
-                }
+                setData(data);
+            } catch (error) {
+                setData(null)
+                await navigate('/404');
             }
         };
 
         fetchData().then();
     }, []);
 
-    return { data, loading };
+    return { data };
 };
 
-export default useTenantData;
+export default useData;
