@@ -7,7 +7,7 @@ const useData = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const domain = "ford";
+            const domain = "nissan";
 
             try {
                 const response = await fetch(`/${ domain }.json`);

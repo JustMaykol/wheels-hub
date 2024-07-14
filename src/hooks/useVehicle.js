@@ -7,7 +7,7 @@ const useVehicle = (tenant_id, car_id) => {
     const [vehicle, setVehicle] = useState(null);
 
     useEffect(() => {
-        if (!tenant_id) return
+        if (!tenant_id || !car_id) return
 
         const fetchCars = async () => {
             try {
