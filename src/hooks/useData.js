@@ -7,8 +7,13 @@ const useData = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            //TODO replace with domain
             const domain = "honda";
+
+            const hostname = window.location.hostname;
+            const tenant = hostname.split('.')[0];
+
+            console.log(window.location.hostname)
+            console.log(tenant)
 
             try {
                 const response = await fetch(`/${ domain }.json`);
