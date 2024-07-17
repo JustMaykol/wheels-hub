@@ -27,18 +27,16 @@ const Vehicles = () => {
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     { vehicles.map(car => (
-                        <div className="border rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col">
-                            <div className="w-full h-48 overflow-hidden flex items-center justify-center mb-2">
-                                <img src={ car.image_url } alt={ car.model } className="object-contain w-full h-full"/>
+                        <Link to={ `/vehicles/${ car.car_id }` }>
+                            <div className="border rounded-lg p-3 shadow-md hover:shadow-lg transition-shadow duration-300 flex flex-col">
+                                <div className="w-full h-48 overflow-hidden flex items-center justify-center mb-2">
+                                    <img src={ car.image_url } alt={ car.model } className="object-contain w-full h-full"/>
+                                </div>
+
+                                <h2 className="text-black dark:text-white text-xl font-bold mb-2">{ car.model }</h2>
+                                <p className="text-black dark:text-white text-base mb-3">Price: { car.price }</p>
                             </div>
-
-                            <h2 className="text-black dark:text-white text-xl font-bold mb-2">{ car.model }</h2>
-                            <p className="text-black dark:text-white text-base mb-3">Price: { car.price }</p>
-
-                            <Link to={ `/vehicles/${ car.car_id }` } className="text-blue-500 hover:text-blue-700 text-sm">
-                                View Details
-                            </Link>
-                        </div>
+                        </Link>
                     )) }
                 </div>
             </div>

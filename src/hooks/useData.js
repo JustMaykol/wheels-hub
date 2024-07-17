@@ -7,13 +7,12 @@ const useData = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const domain = "honda";
-
             const hostname = window.location.hostname;
-            const tenant = hostname.split('.')[0];
+            let domain = hostname.split('.')[0];
 
-            console.log(window.location.hostname)
-            console.log(tenant)
+            if (!['honda', 'ford', 'nissan'].includes(domain)) {
+                domain = 'default';
+            }
 
             try {
                 const response = await fetch(`/${ domain }.json`);
