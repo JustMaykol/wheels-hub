@@ -2,18 +2,18 @@ import { useEffect, useState } from 'react';
 
 import axios from 'axios';
 
-const useUser = () => {
+const useUser = (tenant_id) => {
     const [user, setUser] = useState(null);
     const [error, setError] = useState(null);
     const [loading, setLoading] = useState(false);
 
     useEffect(() => {
-        const localUser = localStorage.getItem('user');
+        const localUser = localStorage.getItem(`${ tenant_id }_user`);
 
         if (localUser) {
             setUser(JSON.parse(localUser));
         }
-    }, []);
+    }, [tenant_id]);
 
     const login = async (tenant_id, email, password) => {
         setError(null);
@@ -32,7 +32,7 @@ const useUser = () => {
 
             if (response.data.statusCode === 200) {
                 setUser(response.data.body);
-                localStorage.setItem('user', JSON.stringify(response.data.body));
+                localStorage.setItem(`${ tenant_id }_user`, JSON.stringify(response.data.body));
             }
         } catch (error) {
             setUser(null);

@@ -12,8 +12,8 @@ import { Link } from "gatsby";
 
 const Vehicles = () => {
     const { data } = useData();
-    const { user } = useUser();
 
+    const { user } = useUser(data?.id);
     const { vehicles } = useVehicles(data?.id);
 
     if (!data || !vehicles) {
@@ -23,7 +23,7 @@ const Vehicles = () => {
     return (
         <Layout data={ data } user={ user }>
             <div className="container mx-auto px-4 py-8">
-                <h1 className="text-4xl font-bold mb-16">Vehicles</h1>
+                <h1 className="text-black dark:text-white text-4xl font-bold mb-16">Vehicles</h1>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                     { vehicles.map(car => (
@@ -32,8 +32,8 @@ const Vehicles = () => {
                                 <img src={ car.image_url } alt={ car.model } className="object-contain w-full h-full"/>
                             </div>
 
-                            <h2 className="text-xl font-bold mb-2">{ car.model }</h2>
-                            <p className="text-base mb-3">Price: { car.price }</p>
+                            <h2 className="text-black dark:text-white text-xl font-bold mb-2">{ car.model }</h2>
+                            <p className="text-black dark:text-white text-base mb-3">Price: { car.price }</p>
 
                             <Link to={ `/vehicles/${ car.car_id }` } className="text-blue-500 hover:text-blue-700 text-sm">
                                 View Details

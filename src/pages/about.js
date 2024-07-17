@@ -8,7 +8,8 @@ import useUser from "../hooks/useUser";
 
 const About = () => {
     const { data } = useData();
-    const { user } = useUser();
+
+    const { user } = useUser(data?.id);
 
     if (!data) {
         return <Loading/>;

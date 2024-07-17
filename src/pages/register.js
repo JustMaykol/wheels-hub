@@ -11,7 +11,8 @@ import useUser from "../hooks/useUser";
 
 const Register = () => {
     const { data } = useData();
-    const { user, error, loading, register } = useUser();
+
+    const { user, error, loading, register } = useUser(data?.id);
 
     const [name, setName] = useState('');
     const [email, setEmail] = useState('');

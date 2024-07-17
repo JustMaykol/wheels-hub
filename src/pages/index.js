@@ -14,7 +14,8 @@ import { Link } from "gatsby";
 
 const Index = () => {
     const { data } = useData();
-    const { user } = useUser();
+
+    const { user } = useUser(data?.id);
     const { vehicles } = useVehicles(data?.id);
 
     if (!data || !vehicles) {
@@ -26,7 +27,7 @@ const Index = () => {
     return (
         <Layout data={ data } user={ user }>
             <div className="container mx-auto px-4 py-8">
-                <h1 className="text-4xl font-bold text-center mb-8">Welcome to Our Website</h1>
+                <h1 className="text-4xl text-black dark:text-white font-bold text-center mb-8">Welcome to Our Website</h1>
 
                 <div className="mb-16 flex justify-center">
                     <div className="w-full sm:w-3/4 md:w-3/4 lg:w-1/2">
@@ -41,7 +42,7 @@ const Index = () => {
                 </div>
 
                 <div className="mb-16">
-                    <h2 className="text-3xl font-bold text-center mb-6">Featured Images</h2>
+                    <h2 className="text-black dark:text-white text-3xl font-bold text-center mb-6">Featured Images</h2>
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         { featured.map(car => (
@@ -49,7 +50,7 @@ const Index = () => {
                                 <div className="w-full h-40 overflow-hidden flex items-center justify-center mb-3">
                                     <img src={ car.image_url } alt={ car.model } className="object-contain w-full h-full rounded"/>
                                 </div>
-                                <p className="text-md font-semibold">{ car.model }</p>
+                                <p className="text-black dark:text-white text-md font-semibold">{ car.model }</p>
                                 <p className="text-md font-semibold mt-1 text-yellow-300">${ car.price }</p>
                             </Link>
                         )) }
@@ -57,7 +58,7 @@ const Index = () => {
                 </div>
 
                 <div className="mb-16">
-                    <h2 className="text-3xl font-bold text-center mb-6">Our Location</h2>
+                    <h2 className="text-black dark:text-white text-3xl font-bold text-center mb-6">Our Location</h2>
 
                     <div className="flex justify-center">
                         <div className="w-full h-64 md:h-96 lg:w-3/4 lg:h-72 mx-auto rounded-lg overflow-hidden shadow-lg">
