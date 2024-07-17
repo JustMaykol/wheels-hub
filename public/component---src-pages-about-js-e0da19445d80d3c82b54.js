@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkgatsby_starter_hello_world=self.webpackChunkgatsby_starter_hello_world||[]).push([[682],{5465:function(e,t,a){a.r(t);var l=a(7294),r=a(7255),n=a(580),s=a(6548);t.default=()=>{const{data:e}=(0,s.Z)();return e?l.createElement(r.Z,{data:e},l.createElement("div",{className:"container mx-auto px-4 py-8"},l.createElement("h1",{className:"text-4xl font-bold text-center mb-8"},"About"))):l.createElement(n.Z,null)}}}]);
-//# sourceMappingURL=component---src-pages-about-js-e0da19445d80d3c82b54.js.map
