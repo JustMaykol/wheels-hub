@@ -1,2 +1,0 @@
-"use strict";(self.webpackChunkgatsby_starter_hello_world=self.webpackChunkgatsby_starter_hello_world||[]).push([[501],{5791:function(e,t,a){a.r(t);var l=a(7294),r=a(7255),n=a(580),c=a(6548);t.default=()=>{const{data:e}=(0,c.Z)();return e?l.createElement(r.Z,{data:e},l.createElement("div",{className:"container mx-auto px-4 py-8"},l.createElement("h1",{className:"text-4xl font-bold text-center mb-8"},"Contact"))):l.createElement(n.Z,null)}}}]);
-//# sourceMappingURL=component---src-pages-contact-js-6f8217916538cd539024.js.map
