@@ -1,0 +1,2 @@
+"use strict";(self.webpackChunkgatsby_starter_hello_world=self.webpackChunkgatsby_starter_hello_world||[]).push([[422],{8451:function(e,l,t){t.r(l);var r=t(7294);l.default=e=>{let{params:l}=e;return console.log(l["*"]),r.createElement("div",null,l["*"])}}}]);
+//# sourceMappingURL=component---src-templates-vehicles-template-js-9e33eac680029692c8e8.js.map

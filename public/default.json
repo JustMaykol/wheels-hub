@@ -1,0 +1,23 @@
+{
+  "id": "NONE",
+  "name": "WheelsHub",
+  "icon": "mdi:car",
+  "color": "#AE8507",
+  "carousel": [
+    {
+      "alt": "Image 1",
+      "url": "https://via.placeholder.com/800x400"
+    },
+    {
+      "alt": "Image 2",
+      "url": "https://via.placeholder.com/800x400"
+    },
+    {
+      "alt": "Image 3",
+      "url": "https://via.placeholder.com/800x400"
+    }
+  ],
+  "about": "Welcome to WheelsHub!\n\nAt WheelsHub, we specialize in creating high-quality, custom websites for the automotive industry. Our mission is to empower car dealers and private sellers with the tools they need to reach more customers and increase sales.\n\nOur websites are designed with the latest technology to ensure a seamless and engaging user experience. Whether you're looking to showcase your inventory, offer financing options, or provide detailed vehicle information, WheelsHub has the perfect solution for you.\n\nWe understand the unique challenges of selling vehicles online, and our team of experts is here to support you every step of the way. From design and development to marketing and analytics, we provide comprehensive services to help your business thrive.\n\nJoin the many satisfied clients who have transformed their online presence with WheelsHub. Let us help you drive your business forward.\n\nThank you for choosing WheelsHub."
+}
+
+

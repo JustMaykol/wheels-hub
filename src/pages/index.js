@@ -6,11 +6,15 @@ import Layout from "../components/Layout";
 import Loading from '../components/Loading';
 
 import useData from "../hooks/useData";
+import useUser from "../hooks/useUser";
+
 import useVehicles from "../hooks/useVehicles";
+
 import { Link } from "gatsby";
 
 const Index = () => {
     const { data } = useData();
+    const { user } = useUser();
     const { vehicles } = useVehicles(data?.id);
 
     if (!data || !vehicles) {
@@ -20,7 +24,7 @@ const Index = () => {
     const featured = vehicles.slice(2, 5);
 
     return (
-        <Layout data={ data }>
+        <Layout data={ data } user={ user }>
             <div className="container mx-auto px-4 py-8">
                 <h1 className="text-4xl font-bold text-center mb-8">Welcome to Our Website</h1>
 
@@ -41,7 +45,7 @@ const Index = () => {
 
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                         { featured.map(car => (
-                            <Link to={ `/vehicles/${ car.model }` } className="flex flex-col items-center rounded-lg p-3 hover:shadow-lg transition-shadow duration-300">
+                            <Link to={ `/vehicles/${ car.car_id }` } className="flex flex-col items-center rounded-lg p-3 hover:shadow-lg transition-shadow duration-300">
                                 <div className="w-full h-40 overflow-hidden flex items-center justify-center mb-3">
                                     <img src={ car.image_url } alt={ car.model } className="object-contain w-full h-full rounded"/>
                                 </div>

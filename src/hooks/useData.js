@@ -7,7 +7,8 @@ const useData = () => {
 
     useEffect(() => {
         const fetchData = async () => {
-            const domain = "nissan";
+            //TODO replace with domain
+            const domain = "honda";
 
             try {
                 const response = await fetch(`/${ domain }.json`);

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { Icon } from "@iconify/react";
-import { DarkThemeToggle, Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react";
+import { DarkThemeToggle, Dropdown, DropdownHeader, DropdownItem, Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react";
 
 const pages = [
     {
@@ -15,14 +15,10 @@ const pages = [
     {
         path: "/about",
         title: "ABOUT"
-    },
-    {
-        path: "/contact",
-        title: "CONTACT"
     }
 ];
 
-const Layout = ({ children, data }) => {
+const Layout = ({ children, data, user }) => {
     return (
         <div className='min-h-screen flex flex-col'>
             <header>
@@ -35,9 +31,27 @@ const Layout = ({ children, data }) => {
                     </NavbarBrand>
 
                     <div className='flex items-center md:order-2 space-x-4'>
-                        <a href='/login'>
-                            <Icon icon='fa-solid:user' className='text-3xl' style={ { color: data.color } }/>
-                        </a>
+                        {
+                            user ? (
+                                <Dropdown placement='left-start' style={ { all: 'unset' } } arrowIcon={ false } label={ <Icon rounded icon='fa-solid:user' className='text-3xl' style={ { color: data.color } }/> }>
+                                    <DropdownHeader>
+                                        <span className="block text-sm">{ user.name }</span>
+                                        <span className="block truncate text-sm font-medium">{ user.user_id }</span>
+                                        <span className="block text-sm">${ user.wallet }</span>
+                                    </DropdownHeader>
+                                    <DropdownItem onClick={ () => {
+                                        localStorage.removeItem('user');
+                                        window.location.reload();
+                                    } } className='justify-center font-bold'>Log Out</DropdownItem>
+                                </Dropdown>
+                            ) : (
+                                <a onClick={ () => {
+                                    localStorage.setItem('redirect', window.location.pathname);
+                                } } href='/login'>
+                                    <Icon icon='fa-solid:user' className='text-3xl' style={ { color: data.color } }/>
+                                </a>
+                            )
+                        }
 
                         <DarkThemeToggle/>
                         <NavbarToggle style={ { color: data.color } }/>
@@ -46,7 +60,7 @@ const Layout = ({ children, data }) => {
                     <NavbarCollapse>
                         { pages.map(({ path, title }) => {
                             return (
-                                <NavbarLink className='text-black dark:text-white font-semibold' href={ path }>
+                                <NavbarLink className='text-black dark:text-white font-semibold md:hover:text-black dark:hover:text-white' href={ path }>
                                     { title }
                                 </NavbarLink>
                             );

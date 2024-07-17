@@ -1,0 +1,24 @@
+{
+  "id": "FORD",
+  "name": "Ford",
+  "icon": "simple-icons:ford",
+  "color": "#081534",
+  "carousel": [
+    {
+      "alt": "Mustang",
+      "url": "https://images.unsplash.com/photo-1603553329474-99f95f35394f?q=80&w=2069&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "alt": "Ranger",
+      "url": "https://images.unsplash.com/photo-1617132217587-19a419c6a985?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
+    {
+      "alt": "F-150",
+      "url": "https://images.unsplash.com/photo-1551830820-330a71b99659?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    }
+  ],
+  "about": "Welcome to Ford!\n\nFounded over a century ago, Ford has revolutionized the way the world moves. Our legacy is built on a foundation of innovation, quality, and a relentless pursuit of excellence.\n\nFrom the iconic Ford Mustang to the rugged F-Series trucks, our vehicles are designed to meet the diverse needs of our customers. We are committed to building a better world, where everyone is free to move and pursue their dreams.\n\nAt Ford, we believe in creating a future that’s smarter, safer, and more sustainable. Our dedication to cutting-edge technology and customer satisfaction drives us to continually improve and innovate.\n\nThank you for choosing Ford. Together, we move forward."
+}
+
+
+
