@@ -1,5 +1,6 @@
 import React from 'react';
 
+import { Helmet } from "react-helmet";
 import { Icon } from "@iconify/react";
 import { DarkThemeToggle, Dropdown, DropdownHeader, DropdownItem, Navbar, NavbarBrand, NavbarCollapse, NavbarLink, NavbarToggle } from "flowbite-react";
 
@@ -21,6 +22,10 @@ const pages = [
 const Layout = ({ children, data, user }) => {
     return (
         <div className='min-h-screen flex flex-col bg-white dark:bg-gray-900 bg-gradient-to-r from-blue-100 to-blue-300 dark:bg-gradient-to-r dark:from-gray-800 dark:to-gray-900'>
+            <Helmet>
+                <title>{ data.name }</title>
+            </Helmet>
+
             <header>
                 <Navbar fluid={ true } rounded={ false } className='bg-gray-400 dark:bg-gray-600'>
                     <NavbarBrand className='items-center' href='/'>
