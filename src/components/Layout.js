@@ -45,7 +45,7 @@ const Layout = ({ children, data, user }) => {
                                         <span className="block text-sm">${ user.wallet }</span>
                                     </DropdownHeader>
                                     <DropdownItem onClick={ () => {
-                                        localStorage.removeItem('user');
+                                        localStorage.removeItem(`${ data.id }_user`);
                                         window.location.reload();
                                     } } className='justify-center font-bold'>Log Out</DropdownItem>
                                 </Dropdown>
